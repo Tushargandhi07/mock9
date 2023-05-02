@@ -9,15 +9,17 @@ const PORT= process.env.port || 4440;
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send('welcome');
+});
+
 app.use("/user",userRouter);
 app.use(authentication);
 app.use("/post",postRouter);
 
 
 
-app.get("/", (req, res) => {
-    res.send('welcome');
-});
+
 
 
 
